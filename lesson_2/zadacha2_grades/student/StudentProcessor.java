@@ -40,7 +40,7 @@ public class StudentProcessor {
     public static String searchStudent(String name) {
         List<Student> students = readStudents();
         Optional<Student> student = students.stream()
-                .filter(st -> st.getName().equalsIgnoreCase(name))
+                .filter(stud -> stud.getName().equalsIgnoreCase(name))
                 .findFirst();
 
         return student
