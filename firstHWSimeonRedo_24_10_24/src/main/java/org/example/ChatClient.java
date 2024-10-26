@@ -30,7 +30,8 @@ public class ChatClient {
 
                 @Override
                 public void failed(Throwable exc, Void attachment) {
-                    exc.getMessage();
+
+                    System.out.println(exc.getMessage());
                 }
             });
 
@@ -38,7 +39,7 @@ public class ChatClient {
             Thread.sleep(Long.MAX_VALUE);
 
         } catch (IOException | InterruptedException e) {
-            e.getMessage();
+            System.out.println(e.getMessage());
         }
     }
 
@@ -59,7 +60,7 @@ public class ChatClient {
                     clientChannel.close();
                     break;
                 } catch (IOException e) {
-                    e.getMessage();
+                    System.out.println(e.getMessage());
                 }
             }
         }
@@ -79,7 +80,8 @@ public class ChatClient {
 
             @Override
             public void failed(Throwable exc, ByteBuffer buffer) {
-                exc.getMessage();
+
+                System.out.println(exc.getMessage());
             }
         });
     }
@@ -94,7 +96,8 @@ public class ChatClient {
 
             @Override
             public void failed(Throwable exc, Void attachment) {
-                exc.getMessage();
+
+                System.out.println(exc.getMessage());
             }
         });
     }

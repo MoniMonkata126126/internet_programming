@@ -55,7 +55,7 @@ public class ChatServer {
                                     try {
                                         clientChannel.close();
                                     } catch (IOException e) {
-                                        e.printStackTrace();
+                                        System.out.println(e.getMessage());
                                     }
                                 }
                             } else {
@@ -71,14 +71,15 @@ public class ChatServer {
 
                         @Override
                         public void failed(Throwable exc, ByteBuffer buffer) {
-                            exc.getMessage();
+
+                            System.out.println(exc.getMessage());
                         }
                     });
                 }
 
                 @Override
                 public void failed(Throwable exc, Void attachment) {
-                    exc.getMessage();
+                    System.out.println(exc.getMessage());
                 }
             });
 
@@ -86,7 +87,7 @@ public class ChatServer {
             Thread.sleep(Long.MAX_VALUE);
 
         } catch (IOException | InterruptedException e) {
-            e.getMessage();
+            System.out.println(e.getMessage());
         }
     }
 
@@ -102,7 +103,7 @@ public class ChatServer {
 
                     @Override
                     public void failed(Throwable exc, Void attachment) {
-                        exc.getMessage();
+                        System.out.println(exc.getMessage());
                     }
                 });
             }
@@ -119,7 +120,7 @@ public class ChatServer {
 
             @Override
             public void failed(Throwable exc, Void attachment) {
-                exc.getMessage();
+                System.out.println(exc.getMessage());
             }
         });
     }
